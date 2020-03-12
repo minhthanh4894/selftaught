@@ -1,0 +1,62 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.fl-left {
+  float: left;
+  text-align: right;
+  margin-left: 4rem;
+}
+.fl-right {
+  float: right;
+  text-align: left;
+  margin-right: 4rem;
+}
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+.visible {
+  visibility: hidden;
+  opacity: 0;
+}
+.pos-fixed {
+  // class này để fixed cái icon menu khi responsive
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.5;
+}
+.opacity-1 {
+  opacity: 1 !important;
+}
+.text-center {
+  text-align: center;
+}
+.bg-gray {
+  background-color: #f7f7f7;
+}
+.margin-top-big {
+  margin-top: 8rem;
+  @include max_767 {
+    margin-top: 6rem;
+  }
+}
+.margin-bottom-big {
+  margin-bottom: 8rem;
+  @include max_767 {
+    margin-bottom: 6rem;
+  }
+}
+.margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+.margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+.margin-top-small {
+  margin-top: 1.5rem;
+}
