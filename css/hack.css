@@ -1,0 +1,162 @@
+/* IE */
+ /* for IE6 */
+ *html .someClass {color:red}
+
+ /* for IE7 */
+ *:first-child + html .someClass {color:red}
+
+ /* inline IE7 CSS */
+ .someElement {
+    color:blue; /* all browsers */
+    *color:red
+ }
+ /* inline IE8 CSS */
+ .someElement {
+   color:crimson; /* all browsers */
+   color:black\0/; /* IE 8 &amp; 9 */
+ }
+
+ /* IE9 CSS - doesn't work with background */
+ :root .someElement { color:green\0/IE9; }  /* IE9 */
+ /* IE9 Media Query, works well with background, doesn't affect IE10 and later */
+ @media all and (min-width:0\0) and (min-resolution: .001dpcm)
+ {
+  select { 
+     background:#f6f6f6;
+     padding-right:0; 
+ }
+ }
+ /* IE 9, 10 & 11 */
+ @media screen and (min-width:0\0) { 
+ .someElement {
+     font-weight: bold;
+     text-decoration: underline;
+     display: inline;
+     }
+ }
+
+ /* Display Content To Internet Explorer 9 and Newer */
+ @media screen\0 { _::selection, .selector:after { 
+         content: "MSIE Content Here"; 
+         property:value; 
+     } 
+ }
+
+ /* Display Content To Internet Explorer 9 and newer */
+ @media screen and (min-width:0\0) and (min-resolution:+72dpi) {
+    .selector:after {
+       content: "MSIE Content Here";
+       property:value;
+ } }
+ /* END IE */
+
+ /* Firefox */
+ @-moz-document url-prefix() {
+    .className {font-size: .6em;}
+    }
+    
+    /* Firefox (all) */
+    :-moz-tree-row(hover), .selector { property:value; }
+    
+    /* FireFox 3 and Up */
+    html>/**/body .someClass, x:-moz-any-link, x:default {left:1em !important}
+    
+    /* Anything but Firefox and Internet Explorer 8 */
+    _::selection, .selector { property:value; }
+    
+    /* Anything but Firefox and Internet Explorer 8- */
+    _::selection, :root .selector { property:value; }
+    
+    /* Firefox 4-30 */
+    _::-moz-math-stretchy, _:-moz-ui-valid, :root .selector { property:value; }
+    
+    /* To detect Firefox 46+ (Pre-Release) */
+    @supports (-moz-appearance:none) and (-webkit-appearance:none)
+    {
+      .selector { property:value; } 
+    }
+    
+    /* Display Content To Firefox */
+    _:-moz-tree-row(hover), .selector:after { 
+       content: "Firefox Content Here"; 
+       property:value; 
+    }
+ /* END Firefox */
+
+ /* Chrome and Safari */
+ @media screen and (-webkit-min-device-pixel-ratio:0)
+{
+.someElement {margin:1em}
+}
+
+/* Chrome 46+ (and Opera 33+) */
+
+/* Chrome and Safari (Any) */
+.selector:not(*:root) { property:value; }
+
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
+@media screen and (min-color-index:0) 
+and(-webkit-min-device-pixel-ratio:0) { @media
+{
+   .safari_only { 
+
+       color:#0000FF; 
+       background-color:#CCCCCC; 
+
+   }
+}}
+
+/* Display Content To Chrome or Safari */
+.selector:after { 
+   content: "Webkit Content Here"\@/""; 
+   property:value; 
+}
+
+/* Display Content To Chrome or Safari */
+.selector:not(*:root):after { 
+   content: "Webkit Content Here";
+   property:value; 
+}
+
+/* Safari 6.1-7.0 */
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+and (min-color-index:0)
+{  
+  .safari_only {(;
+
+     color:#0000FF; 
+     background-color:#CCCCCC; 
+
+   );}
+}
+
+/* Safari 7.1+ (9.0 is the latest version of Safari at this time) */
+_::-webkit-full-page-media, _:future, :root .safari_only {
+
+ color:#0000FF; 
+ background-color:#CCCCCC; 
+
+}
+
+/* Safari 9+ */
+_::-webkit-:not(:root:root), .selector { property:value; } 
+
+/* Safari 9+ (non-iOS) */
+_:-webkit-full-screen:not(:root:root), .selector { property:value; }
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{ .className { margin:10px; } }
+
+- Safari và Google Chrome chủ yếu là giống nhau nhưng đôi khi xử lý khác nhau, đặc biệt là trong các hình thức Safari được cập nhật ít hơn, có một cách để phân biệt chúng trong CSS.
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+   /* Safari and Chrome, if Chrome rule needed */
+   .someClass {
+    color:#c00;
+   }
+
+   /* Safari 5+ ONLY */
+   ::i-block-chrome, .someClass {
+    color:#000;
+   }
+}
+ /* END Chrome and Safari */
