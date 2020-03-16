@@ -795,6 +795,7 @@ img {
   height: 50%;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   background-blend-mode: screen;
   -webkit-clip-path: ellipse(80% 70% at 50% 30%);
   clip-path: ellipse(80% 70% at 50% 30%);
